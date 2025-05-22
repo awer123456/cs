@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d_basic_npc_scene_001"] ; Placeholder UID
+
+[ext_resource type="Script" path="res://npc/npc_animal_ai_controller.gd" id="1_npc_ai_controller"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_NPC"]
+radius = 0.4
+height = 1.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape_NPC"]
+radius = 0.4
+height = 1.2
+
+[node name="BasicNPC" type="CharacterBody3D"]
+script = ExtResource("1_npc_ai_controller")
+# animal_data_path will be set per instance in MainWorld.tscn
+
+[node name="VisualModel" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_NPC")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape_NPC")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="NavAgent" type="NavigationAgent3D" parent="."]
+# The NPCAnimalAIController script will use this node if found,
+# or create one if not. It's cleaner to have it explicitly in the scene.
+# Properties like agent_height, agent_radius can be set here if defaults aren't suitable.
+```

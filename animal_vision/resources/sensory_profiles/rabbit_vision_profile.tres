@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SensoryProfile" load_steps=2 format=3 uid="uid://d_rabbit_sensory_uid001"]
+
+[ext_resource type="Script" path="res://systems/sensory_profile.gd" id="1_sensory_profile_script"]
+
+[resource]
+script = ExtResource("1_sensory_profile_script")
+profile_id = "RabbitVision"
+field_of_view = 110.0
+color_saturation = 1.05 # Slightly more vibrant
+night_vision_threshold = 0.2
+visual_night_vision_intensity = 1.5
+hearing_range_multiplier = 1.2
+focus_sounds = ["Fox_Footsteps", "Eagle_Screech"] ; Example sound tags
+detection_radius = 2.0 # Limited smell. Changed from olfactory_radius to match SensoryProfile.gd
+tracked_tags = ["Food_Plant_Carrot", "WaterSource"]
+trail_display_duration = 3.0
+post_process_shader_path = "" ; No specific post-process for rabbit by default

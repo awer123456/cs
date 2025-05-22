@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AnimalData" load_steps=3 format=3 uid="uid://d_fox_data_res_001"]
+
+[ext_resource type="Script" path="res://player/animal_data.gd" id="1_animal_data_script"]
+
+[sub_resource type="Resource" id="AnimalStats_Fox" script_class="AnimalStats"]
+max_health = 100.0
+base_move_speed = 6.0
+jump_height = 5.0
+stamina_max = 100.0
+hunger_max = 100.0
+thirst_max = 70.0
+
+[resource]
+script = ExtResource("1_animal_data_script")
+animal_id = "Fox_Default"
+display_name = "Fox"
+description = "A cunning carnivore, adapted for hunting."
+base_stats = SubResource("AnimalStats_Fox")
+model_resource_path = "res://scenes/characters/Fox.tscn"
+animator_controller_path = ""
+icon_path = "res://assets/icons/fox_icon.png"
+controller_script_path = "res://player/animals/fox_controller.gd"
+first_person_camera_offset = Vector3(0, 0.7, 0.5)
+sensory_profile_id = "FoxVision"
+ability_ids = ["sneak_basic_fox"]
+diet_type = 1 ; Globals.DietType.CARNIVORE (1)
+unlock_prerequisite = ""
+hunger_rate_multiplier = 1.0
+```

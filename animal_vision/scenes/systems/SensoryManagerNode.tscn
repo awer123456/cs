@@ -1,0 +1,8 @@
+; SensoryManagerNode.tscn
+[gd_scene load_steps=2 format=3 uid="uid://d_sensorymgr_node_uid001"] ; Placeholder UID
+
+[ext_resource type="Script" path="res://systems/sensory_manager.gd" id="1_sensory_script"]
+
+[node name="SensoryManagerNode" type="Node"]
+script = ExtResource("1_sensory_script")
+```

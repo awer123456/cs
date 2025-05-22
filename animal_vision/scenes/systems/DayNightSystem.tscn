@@ -1,0 +1,27 @@
+; DayNightSystem.tscn
+[gd_scene load_steps=4 format=3 uid="uid://d_daynight_sys_scene_001"] ; Placeholder UID
+
+[ext_resource type="Script" path="res://systems/day_night_cycle.gd" id="1_day_night_script"]
+
+[sub_resource type="Environment" id="Environment_default"]
+background_mode = 1 ; Clear Color
+background_color = Color(0.3, 0.3, 0.3, 1) ; Default clear color from project settings
+sky_ambient_light = Color(0.5,0.5,0.5) ; A bit of ambient light
+tonemap_mode = 2 ; Aces
+glow_enabled = true
+glow_normalized = true
+
+[node name="DayNightSystem" type="Node3D"]
+script = ExtResource("1_day_night_script")
+sun_light = NodePath("SunLight")
+environment = NodePath("MainWorldEnvironment")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0) ; Angled down slightly
+shadow_enabled = true
+light_energy = 1.0
+light_color = Color(1,1,0.85) ; Default day color
+
+[node name="MainWorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_default")
+```

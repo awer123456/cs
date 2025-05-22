@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://d_hud_scene_001"] ; Placeholder UID
+
+[ext_resource type="Script" path="res://ui/hud_controller.gd" id="1_hud_controller"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud_controller")
+health_bar = NodePath("MarginContainer/VBoxContainer/HealthBar")
+stamina_bar = NodePath("MarginContainer/VBoxContainer/StaminaBar")
+hunger_bar = NodePath("MarginContainer/VBoxContainer/HungerBar")
+thirst_bar = NodePath("MarginContainer/VBoxContainer/ThirstBar")
+current_animal_icon = NodePath("MarginContainer/CurrentAnimalIcon")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0 
+size_flags_vertical = 0   
+theme_override_constants/separation = 10
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+rect_min_size = Vector2(200, 25) # Using rect_min_size for Godot 3.x/4.x compatibility (prompt had min_right/bottom)
+value = 100.0
+show_percentage = true
+
+[node name="StaminaBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+rect_min_size = Vector2(200, 25)
+value = 100.0
+show_percentage = true
+
+[node name="HungerBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+rect_min_size = Vector2(200, 25)
+value = 100.0
+show_percentage = true
+
+[node name="ThirstBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+rect_min_size = Vector2(200, 25)
+value = 100.0
+show_percentage = true
+
+[node name="CurrentAnimalIcon" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+offset_left = 20.0 
+offset_top = 200.0 
+rect_min_size = Vector2(64, 64) # Using rect_min_size for Godot 3.x/4.x
+expand_mode = 1 
+stretch_mode = 5 
+# texture will be set by HUDController.gd
+```

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d_player_rig_scene_001"]
+
+[ext_resource type="Script" path="res://player/player_animal_controller.gd" id="1_player_controller"]
+[ext_resource type="Script" path="res://player/player_survival_stats.gd" id="2_survival_stats"]
+
+[node name="PlayerRig" type="Node3D"]
+script = ExtResource("1_player_controller")
+player_survival_stats = NodePath("PlayerSurvivalStatsNode")
+animal_anchor_node = NodePath(".")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PlayerSurvivalStatsNode" type="Node" parent="."]
+script = ExtResource("2_survival_stats")
+```

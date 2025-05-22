@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SensoryProfile" load_steps=2 format=3 uid="uid://d_fox_sensory_uid001"]
+
+[ext_resource type="Script" path="res://systems/sensory_profile.gd" id="1_sensory_profile_script"]
+
+[resource]
+script = ExtResource("1_sensory_profile_script")
+profile_id = "FoxVision"
+field_of_view = 90.0
+color_saturation = 0.95 # Slightly less saturated, more focused
+night_vision_threshold = 0.15 # Better night vision activation
+visual_night_vision_intensity = 1.8
+hearing_range_multiplier = 1.0
+focus_sounds = ["Rabbit_Movement", "Rodent_Squeak"]
+detection_radius = 25.0 # Keen smell. Changed from olfactory_radius to match SensoryProfile.gd
+tracked_tags = ["Rabbit_Default", "Food_Meat", "Scent_Trail_Rabbit"]
+trail_display_duration = 15.0
+post_process_shader_path = "res://shaders/fox_olfactory_vision.gdshader" ; Example placeholder path

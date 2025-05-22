@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AnimalData" load_steps=3 format=3 uid="uid://d_rabbit_data_res_001"]
+
+[ext_resource type="Script" path="res://player/animal_data.gd" id="1_animal_data_script"]
+
+[sub_resource type="Resource" id="AnimalStats_Rabbit" script_class="AnimalStats"]
+max_health = 75.0
+base_move_speed = 7.0
+jump_height = 6.0
+stamina_max = 120.0
+hunger_max = 80.0
+thirst_max = 60.0
+
+[resource]
+script = ExtResource("1_animal_data_script")
+animal_id = "Rabbit_Default"
+display_name = "Rabbit"
+description = "A fast and agile herbivore, always alert."
+base_stats = SubResource("AnimalStats_Rabbit")
+model_resource_path = "res://scenes/characters/Rabbit.tscn"
+animator_controller_path = ""
+icon_path = "res://assets/icons/rabbit_icon.png"
+controller_script_path = "res://player/animals/rabbit_controller.gd"
+first_person_camera_offset = Vector3(0, 0.6, 0.4)
+sensory_profile_id = "RabbitVision"
+ability_ids = ["sprint_basic_rabbit"]
+diet_type = 0 ; Globals.DietType.HERBIVORE (0)
+unlock_prerequisite = ""
+hunger_rate_multiplier = 1.2
+```
